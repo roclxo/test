@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>주휴수당 계산기</title>
+    <style>
+        .calculator {
+            border: 1px solid #000;
+            padding: 20px;
+            width: 300px;
+            margin: 0 auto;
+        }
+        .calculator input {
+            width: 100%;
+            margin-bottom: 10px;
+        }
+        .calculator button {
+            width: 100%;
+            padding: 10px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+        }
+        .calculator button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <div class="calculator">
+        <input type="number" id="hoursWorked" placeholder="1주일 동안 총 근무 시간">
+        <input type="number" id="hourlyWage" placeholder="시간당 임금">
+        <button onclick="calculatePay()">주휴수당 계산</button>
+        <p id="result"></p>
+    </div>
+
+    <script>
+        function calculatePay() {
+            var hoursWorked = document.getElementById('hoursWorked').value;
+            var hourlyWage = document.getElementById('hourlyWage').value;
+            var weeklyPay = (hoursWorked / 40) * 8 * hourlyWage;
+            document.getElementById('result').innerHTML = "당신의 주휴수당은: " + weeklyPay;
+        }
+    </script>
+</body>
+</html>
